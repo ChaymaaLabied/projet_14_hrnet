@@ -37,6 +37,7 @@ export const EmployeesList = () => {
           columns={columns}
           initialState={{ pagination: { paginationModel } }}
           pageSizeOptions={[5, 10]}
+          getRowId={(row) => row.firstName} // Utiliser un champ existant comme identifiant
           sx={{ border: 1 }}
         />
       </Paper>
