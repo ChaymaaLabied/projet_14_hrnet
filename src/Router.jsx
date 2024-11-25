@@ -1,16 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import Router from "./Router";
-import { store } from "./store";
-import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { EmployeesList } from "./Pages/EmployeesList";
+import NewEmployee from "./Pages/NewEmployee";
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <NewEmployee />,
+  },
+  {
+    path: "/list-employees",
+    element: <EmployeesList />,
+  },
+]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <RouterProvider router={Router} />
-      </Provider>
-    </React.StrictMode>
-  );
+export default function AppRouter() {
+  return <RouterProvider router={appRouter} />;
+}

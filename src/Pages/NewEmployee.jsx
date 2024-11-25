@@ -14,7 +14,7 @@ import {
   import { addToList } from "../redux/employeesSlice.js";
   import { states } from "../utils/constants.js";
   import { inputify } from "../utils/utils.js";
-//   import "./css/NewEmployee.css";
+  import "../style/newEmployee.css";
   
   const NewEmployee = () => {
     const [firstName, setFirstName] = useState("");
@@ -65,10 +65,10 @@ import {
   
     return (
       <div>
-        <div class="title">
+        <div className="title">
           <h1>HRnet</h1>
         </div>
-        <div class="container">
+        <div className="container">
           <Link to="/list-employees">View Current Employees</Link>
           <h2>Create Employee</h2>
           <form action="#" id="create-employee">
@@ -104,7 +104,7 @@ import {
               onChange={inputify(setStartDate)}
             />
   
-            <fieldset class="address">
+            <fieldset className="address">
               <legend>Address</legend>
   
               <label htmlFor="street">Street</label>
@@ -181,7 +181,7 @@ import {
             </Typography>
           </Box>
         </Modal>
-        <div id="confirmation" class="modal"></div>
+        <div id="confirmation" className="modal"></div>
       </div>
     );
   };
