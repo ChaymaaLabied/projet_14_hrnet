@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import { DataGrid } from "@mui/x-data-grid";
-import "../style/employeesList.css"
+import "../style/employeesList.css";
 
 const columns = [
   { field: "firstName", headerName: "First Name", width: 150 },
@@ -55,25 +55,7 @@ export const EmployeesList = () => {
           columns={columns}
           initialState={{ pagination: { paginationModel } }}
           pageSizeOptions={[5, 10]}
-          sx={{
-            border: 1,
-            borderColor: "#566824",
-            "& .MuiDataGrid-cell": {
-              color: "#37474F",
-              fontSize: "14px",
-            },
-            "& .MuiDataGrid-columnHeaders": {
-              backgroundColor: "#F1F8E9",
-              fontWeight: "bold",
-              fontSize: "16px",
-            },
-            "& .MuiDataGrid-footerContainer": {
-              backgroundColor: "#E8F5E9",
-            },
-            "& .MuiDataGrid-row:hover": {
-              backgroundColor: "#F1F8E9",
-            },
-          }}
+          sx={{ border: 1 }}
         />
       </Paper>
       <Link to="/" className="employeesList_homeLink">
