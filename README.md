@@ -24,10 +24,7 @@ HRnet is a React application for managing employee information. It allows users 
 - **Redux**: For state management.
 - **Material-UI**: For UI components and styling.
 - **React Router**: For navigation between pages.
-
-## Project Structure
-
-src/ |-- Pages/ | |-- EmployeesList.jsx # Component to display the list of employees. | |-- NewEmployee.jsx # Component for creating new employee records. |-- redux/ | |-- employeesSlice.js # Redux slice for managing employee data. |-- utils/ | |-- utils.js # Utility functions (e.g., inputify function). |-- styles/ # CSS files for component styling.
+- **@chmicha01/modal-oc**: Library for handling modals.
 
 ## Contributing
 
