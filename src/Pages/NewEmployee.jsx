@@ -182,7 +182,7 @@ const NewEmployee = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <h3 className="new-employee__modal-message">Employee Created!</h3>
+        <h3 className="new-employee__modal-message">Employee Created !</h3>
       </Modal>
     </div>
   );

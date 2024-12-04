@@ -33,7 +33,7 @@ body {
 /* Titles */
 .new-employee__title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #566824; /* Vert foncé */
   margin-bottom: 1rem;
 }
@@ -73,16 +73,8 @@ body {
 
 .new-employee__input {
   background-color: #ffffff; /* Blanc */
-  border: 1px solid #566824; /* Vert foncé */
   border-radius: 4px;
-  padding: 0.5rem;
   transition: all 0.3s ease-in-out;
-}
-
-.new-employee__input:focus {
-  outline: none;
-  border-color: #568203; /* Autre vert */
-  box-shadow: 0 0 5px rgba(86, 130, 3, 0.5); /* Légère lumière verte */
 }
 
 .new-employee__fieldset {
@@ -113,6 +105,6 @@ body {
 /* Modal */
 .new-employee__modal-message {
   text-align: center;
-  color: #568203; /* Autre vert */
-  font-size: 1.2rem;
+  color: #566824;
+  font-size: 1.5rem;
 }
