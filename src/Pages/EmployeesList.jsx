@@ -1,47 +1,84 @@
-import Paper from "@mui/material/Paper";
-import { DataGrid } from "@mui/x-data-grid";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Paper from "@mui/material/Paper";
+import { DataGrid } from "@mui/x-data-grid";
+import "../style/employeesList.css"
 
 const columns = [
-  { field: "firstName", headerName: "First name", width: 130 },
-  { field: "lastName", headerName: "Last name", width: 130 },
-  { field: "startDate", headerName: "Start date", width: 130 },
-  { field: "department", headerName: "Department", width: 130 },
-  { field: "dateOfBirth", headerName: "Date of birth", width: 130 },
-  { field: "street", headerName: "Street", width: 250 },
-  { field: "city", headerName: "City", width: 130 },
-  { field: "state", headerName: "State", width: 70 },
-  { field: "zipCode", headerName: "Zip code", width: 100 },
+  { field: "firstName", headerName: "First Name", width: 150 },
+  { field: "lastName", headerName: "Last Name", width: 150 },
+  { field: "startDate", headerName: "Start Date", width: 120 },
+  { field: "department", headerName: "Department", width: 120 },
+  { field: "dateOfBirth", headerName: "Date of Birth", width: 150 },
+  { field: "street", headerName: "Street", width: 120 },
+  { field: "city", headerName: "City", width: 120 },
+  { field: "state", headerName: "State", width: 120 },
+  { field: "zipCode", headerName: "Zip Code", width: 120 },
 ];
 
 const paginationModel = { page: 0, pageSize: 5 };
 
 export const EmployeesList = () => {
   const employeesList = useSelector((state) => state.employee.list);
+  const [search, setSearch] = useState("");
+
+  const [searchResult, setSearchResult] = useState(employeesList);
+
+  useEffect(() => {
+    setSearchResult(
+      employeesList.filter((e) =>
+        Object.values(e).some(
+          (elt) =>
+            elt && elt.toString().toLowerCase().includes(search.toLowerCase())
+        )
+      )
+    );
+  }, [employeesList, search]);
 
   return (
-    <div id="employee-div" className="container">
-      <h3>Current Employees</h3>
-      <Paper
-        sx={{
-          height: 400,
-          width: "80%",
-          marginTop: "50px",
-          marginBottom: "20px",
-        }}
-      >
+    <div id="employeesList_container">
+      <h3 className="employeesList_title">Current Employees</h3>
+      <label htmlFor="search" className="employeesList_label">
+        Search
+      </label>
+      <input
+        type="text"
+        id="search"
+        className="employeesList_searchInput"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <Paper className="employeesList_tableContainer">
         <DataGrid
-          rows={employeesList}
+          rows={searchResult}
           columns={columns}
           initialState={{ pagination: { paginationModel } }}
           pageSizeOptions={[5, 10]}
-          getRowId={(row) => row.firstName} // Utiliser un champ existant comme identifiant
-          sx={{ border: 1 }}
+          sx={{
+            border: 1,
+            borderColor: "#566824",
+            "& .MuiDataGrid-cell": {
+              color: "#37474F",
+              fontSize: "14px",
+            },
+            "& .MuiDataGrid-columnHeaders": {
+              backgroundColor: "#F1F8E9",
+              fontWeight: "bold",
+              fontSize: "16px",
+            },
+            "& .MuiDataGrid-footerContainer": {
+              backgroundColor: "#E8F5E9",
+            },
+            "& .MuiDataGrid-row:hover": {
+              backgroundColor: "#F1F8E9",
+            },
+          }}
         />
       </Paper>
-      <Link to="/">Home</Link>
+      <Link to="/" className="employeesList_homeLink">
+        Home
+      </Link>
     </div>
   );
 };

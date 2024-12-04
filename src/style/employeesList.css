@@ -1,0 +1,115 @@
+/* Conteneur principal */
+#employeesList_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #ffffff; /* Blanc */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Titre principal */
+.employeesList_title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #566824; /* Vert foncé */
+}
+
+/* Label de recherche */
+.employeesList_label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #566824; /* Vert foncé */
+}
+
+/* Champ de recherche */
+.employeesList_searchInput {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  border: 1px solid #cfcfcf; /* Gris clair */
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #ffffff; /* Blanc */
+  color: #566824; /* Texte vert foncé */
+}
+
+.employeesList_searchInput:focus {
+  border-color: #568203; /* Vert moyen */
+  outline: none;
+  box-shadow: 0 0 6px rgba(86, 130, 3, 0.5); /* Effet vert au focus */
+}
+
+/* Conteneur du tableau */
+.employeesList_tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #ffffff; /* Blanc */
+  border: 1px solid #cfcfcf; /* Gris clair */
+  border-radius: 8px;
+  padding: 10px;
+}
+/* Lien vers la page d'accueil */
+.employeesList_homeLink {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #566824; /* Vert foncé */
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid #566824;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.employeesList_homeLink:hover {
+  background-color: #566824; /* Vert foncé */
+  color: #ffffff; /* Blanc */
+  text-decoration: none;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  #employeesList_container {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .employeesList_title {
+    font-size: 1.5rem; /* Réduction de la taille du texte */
+  }
+
+  .employeesList_searchInput {
+    width: calc(100% - 30px); /* Ajustement pour réduire les marges */
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employeesList_title {
+    font-size: 1.2rem; /* Texte plus petit */
+    margin-bottom: 15px;
+  }
+
+  .employeesList_searchInput {
+    width: calc(100% - 20px); /* Encore moins de marge */
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .employeesList_tableContainer {
+    padding: 8px; /* Réduction des marges */
+  }
+}

@@ -1,22 +1,118 @@
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Global styles */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #cfcfcf; /* Gris */
+}
+
+/* Container */
+.new-employee__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff; /* Blanc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid #cfcfcf; /* Gris */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  label {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .address {
-    margin-top: 10px;
-  }
+}
+
+/* Titles */
+.new-employee__title {
+  text-align: center;
+  font-size: 2rem;
+  color: #566824; /* Vert foncé */
+  margin-bottom: 1rem;
+}
+
+.new-employee__subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #568203; /* Autre vert */
+  margin-bottom: 2rem;
+}
+
+/* Links */
+.new-employee__link {
+  display: inline-block;
+  margin: 1rem auto;
+  color: #566824; /* Vert foncé */
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #566824;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.new-employee__link:hover {
+  background-color: #566824; /* Vert foncé */
+  color: #ffffff; /* Blanc */
+}
+
+/* Form */
+.new-employee__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.new-employee__input {
+  background-color: #ffffff; /* Blanc */
+  border: 1px solid #566824; /* Vert foncé */
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.new-employee__input:focus {
+  outline: none;
+  border-color: #568203; /* Autre vert */
+  box-shadow: 0 0 5px rgba(86, 130, 3, 0.5); /* Légère lumière verte */
+}
+
+.new-employee__fieldset {
+  border: 1px solid #566824; /* Vert foncé */
+  width: 100%;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.new-employee__legend {
+  font-weight: bold;
+  color: #566824; /* Uniformisé avec le vert foncé */
+}
+
+/* Selects */
+.new-employee__select .MuiInputBase-root {
+  background-color: #ffffff; /* Blanc */
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.new-employee__button:hover {
+  background-color: #566824; /* Vert foncé */
+  color: #ffffff; /* Blanc */
+}
+
+/* Modal */
+.new-employee__modal-message {
+  text-align: center;
+  color: #568203; /* Autre vert */
+  font-size: 1.2rem;
+}
